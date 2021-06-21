@@ -18,6 +18,12 @@ require('./config/database');
 // configure Passport
 require('./config/passport');
 
+//require out routes
+app.get('/', function(req,res){
+  res.render('home')
+})
+
+var indexRoutes = require('./routes');
 
 
 // view engine setup
