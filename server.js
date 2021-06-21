@@ -23,7 +23,8 @@ app.get('/', function(req,res){
   res.render('home')
 })
 
-var indexRoutes = require('./routes');
+var indexRoutes = require('./routes/index');
+var userRoutes = require('./routes/user');
 
 
 // view engine setup
@@ -56,7 +57,7 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
-
+app.use('/',userRoutes);
 
 // invalid request, send 404 page
 app.use(function(req, res) {
