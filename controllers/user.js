@@ -1,10 +1,16 @@
 const user = require('../models/user');
 
+
 module.exports = {
+  new: newLanguage,
   index
 
 };
 
+
+function newLanguage(req, res){
+    res.redirect('/mayataan')
+}
 
 
 function index(req, res, next) {

@@ -24,7 +24,7 @@ app.get('/', function(req,res){
 })
 
 var indexRoutes = require('./routes/index');
-var userRoutes = require('./routes/user');
+var languagesRoutes = require('./routes/languages');
 
 
 // view engine setup
@@ -39,25 +39,23 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 // mount the session middleware
 app.use(session({
-  secret: 'SEI Rocks!',
+  secret: 'SEIRocks!',
   resave: false,
   saveUninitialized: true
 }));
-
 app.use(passport.initialize());
 app.use(passport.session());
 
 
 // Add this middleware BELOW passport middleware
 app.use(function (req, res, next) {
-  res.locals.user = req.user; // assinging a property to res.locals, makes that said property (user) availiable in every
-  // single ejs view
+  res.locals.user = req.user;
   next();
 });
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
-app.use('/',userRoutes);
+app.use('/',languagesRoutes);
 
 // invalid request, send 404 page
 app.use(function(req, res) {
