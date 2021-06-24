@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <section id="show-page">
+    
+    <h1><%= languages.language %></h1>
+    <div>Details: </div>
+     <div><%=languages.details%></div>
+  </section>
+  
+    <br><br>
+    <h2>Add phrase</h2>
+    <form id="newPhrase"  method="POST" action="/languages/<%= languages._id %>/phrase">
+      <label>Language</label>
+  <select name="language">
+      <option value="mayataan">Mayataan</option>
+      <option value="quechua">Quechua</option>     
+  </select>
+      <input name="phrase" type="text" value="phrase">
+      <input name ="translation "type="text" value= "translation">
+      <input type="submit" value="Add Phrase" >
+  </form>
+    
+    
+</body>
+</html>

@@ -10,7 +10,8 @@ const languageSchema = new mongoose.Schema({
     language:{
           type: String,
           enum : ['mayataan','quechua'],
-          default: 'mayataan'
+          default: 'mayataan',
+          details: String
       },
      user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
      phrases: [phrasesSchema]
