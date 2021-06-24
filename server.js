@@ -19,12 +19,11 @@ require('./config/database');
 require('./config/passport');
 
 //require out routes
-app.get('/', function(req,res){
-  res.render('home')
-})
 
-var indexRoutes = require('./routes/index');
-var languagesRoutes = require('./routes/languages');
+
+var indexRouter = require('./routes/index');
+var languagesRouter = require('./routes/languages');
+var usersRouter = require('./routes/user');
 
 
 // view engine setup
@@ -54,8 +53,10 @@ app.use(function (req, res, next) {
 });
 
 // mount all routes with appropriate base paths
-app.use('/', indexRoutes);
-app.use('/languages',languagesRoutes);
+app.use('/', indexRouter);
+app.use('/languages',languagesRouter);
+app.use('/', usersRouter)
+
 
 // invalid request, send 404 page
 app.use(function(req, res) {

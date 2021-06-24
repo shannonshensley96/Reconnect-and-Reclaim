@@ -8,19 +8,31 @@
     <title>Reconnect and Reclaim</title>
 </head>
 <body> 
-    <a href="/auth/google">Login with Google</a>
+    <ul class="login">
+        <li>
+          <% if (user) { %>
+            <a href="/logout">Log Out</a>
+          <% } else { %>
+            <a href="/auth/google"> Login with Google</a>
+          <% } %>       
+        </li>
+      </ul>
+    <br>
 
-    <a href="/logout">Log Out</a>
+    <section class="add">
+          <% if (user) { %>
+            <a href="/languages/new">Add Language</a>
+
+            <a href="/languages/addPhrase">Add Phrase and translation</a>
+          <% } %>         
+    </section>
+
+      <a href="/languages/languageIndex">Languages</a>
     
+ 
         
     <h1>Reconnect <br> and <br> Reclaim</h1>
-<nav>
-    <a href="/languages/mayataan">Mayat'àan</a>
-    <a href="/languages/quechua">Quechua</a>
-    <a href="languages/muysccubun">Muysccubun</a>
-    <a href="/languages/nahuatl">Nahuatl</a>
-</nav>
-    
+
 
 <p><h3>About Us</h3><br>Reconnecting to your heritage and learning your native language can be difficult since there aren't many resources available. Here you can find an index of useful phrases and sign up to teach or take classes. </p>
 </body>
