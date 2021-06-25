@@ -42,10 +42,11 @@ function create(req, res){
 }
 
 function deleteLanguage(req, res) {
-    console.log(req.params.id, "this is req.params");
-    Language.findByIdAndDelete(req.params.id, function(err) {
-        res.redirect('/languageIndex');
-    });
+    // console.log(req.params.id, "this is req.params");
+    // Language.findByIdAndDelete(req.params.id, function(err) {
+    //     res.redirect('/languageIndex');
+    // });
+    res.send('Hitting the delete route')
 }
 
 function show(req,res){

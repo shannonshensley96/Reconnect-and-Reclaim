@@ -18,7 +18,9 @@
             <tr>
               <td><%= l.language %></td>
               <td><a href="/languages/<%= l._id %>">Learn More</a></td>
-              <td><a href="/languages" >Delete</a></td>
+              <td><form action=“/languages/<%=l.id%>?_method=DELETE” class=“nav-button” method=“POST”>
+                <button type=“submit”>Delete</button>
+              </form></td>
    
             </tr>
             <% }); %>
@@ -28,3 +30,4 @@
 </body>
 </html>
 
+<d

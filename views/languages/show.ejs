@@ -19,17 +19,12 @@
     <% if (user) { %>
       <h2>Add phrase</h2>
       <form id="newPhrase"  method="POST" action="/languages/<%= languages._id %>/phrase">
-        <label>Language</label>
-    <select name="language">
-        <option value="mayataan">Mayataan</option>
-        <option value="quechua">Quechua</option>     
-    </select>
         <input name="phrase" type="text" value="phrase">
         <input name ="translation "type="text" value= "translation">
         <input type="submit" value="Add Phrase" >
       </form>
     <% } %>     
-    <% if (languages.phrase) { %>
+    <% if (languages.phrases) { %>
       <table>
         <thead>
           <tr>
@@ -38,10 +33,10 @@
           </tr>
         </thead>
         <tbody>
-          <% languages.phrase.forEach(function(p) { %>
+          <% languages.phrases.forEach(function(p) { %>
             <tr>
               <td><%= p.phrase %></td>
-              <td><%= r.translation %></td>
+              <td><%= p.translation %></td>
             </tr>
           <% }); %>
         </tbody>
