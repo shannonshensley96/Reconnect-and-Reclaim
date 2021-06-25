@@ -1,0 +1,10 @@
+#new{
+    background-color: #daded4;
+    color: #39603d;
+    
+}
+
+#newLanguage{
+    display: flex;
+    align-items: center;
+}
