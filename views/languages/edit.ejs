@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Phrase</title>
+</head>
+<body>
+  <form id="newLanguage" action='/languages/<%=language._id %>?_method=PUT' method="POST">
+    <label>Edit Language</label>
+<select name="language">
+    <option value="Mayatàan">Mayat'àan</option>
+    <option value="Quechua">Quechua</option> 
+    <option value="Nahuatl">Nahuatl</option>  
+    <option value="Muysccubun">Muysccubun</option>       
+</select>
+   <input name ="details" text="text" value="Add detail">
+    <input type="submit" value="Update Language">
+</form>
+</body>
+</html>

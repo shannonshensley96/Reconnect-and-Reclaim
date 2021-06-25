@@ -2,7 +2,9 @@ const Language = require('../models/languages');
 
 
 module.exports = {
- create
+ create,
+ edit: phraseEdit, 
+ update: updatePhrase
 };
 
 
@@ -14,4 +16,12 @@ function create(req, res) {
         res.redirect(`/languages/${language._id}`);
       });
     });
+  }
+
+  function phraseEdit(req, res){
+      res.send('hitting edit')
+  }
+
+  function updatePhrase(req, res){
+      res.send('hitting update route')
   }

@@ -3,31 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="stylesheets/style.css"/>
+   <title>Language Index</title>
 </head>
-<body>
-    <table id="languageIndex">
-        <thead>
-          <tr>
-            <th>Language</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% languages.forEach(function(l) { %>
-            <tr>
-              <td><%= l.language %></td>
-              <td><a href="/languages/<%= l._id %>">Learn More</a></td>
-              <td><form action=“/languages/<%=l.id%>?_method=DELETE” class=“nav-button” method=“POST”>
-                <button type=“submit”>Delete</button>
-              </form></td>
-   
-            </tr>
-            <% }); %>
-          </tbody>
-        </table>
-    
+<body id ="language">
+  <h1>Languages</h1>
+  <div id='languages'>
+    <% languages.forEach(l => { %>
+      <div id="main">
+          <p ><%= l.language %> </p>
+          <p><a href="/languages/<%= l._id %>">Learn More</a></p>
+      </div>
+      <% if (user) { %>
+      </div>
+      <form action="/languages/<%=l.id%>/edit" method="PUT" >
+        <button type="submit">Edit</button>
+      </form>
+      </form>
+      <form action="/languages/<%=l.id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+      </div>
+      
+      <% } %>  
+      </div>
+    <% }) %>
+    </div>
+</div>
 </body>
 </html>
 
-<d

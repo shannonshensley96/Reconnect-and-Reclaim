@@ -9,8 +9,8 @@ const phrasesSchema = new mongoose.Schema({
 const languageSchema = new mongoose.Schema({
     language:{
           type: String,
-          enum : ['mayataan','quechua'],
-          default: 'mayataan',
+          enum : ['Mayatàan','Quechua','Nahuatl','Muysccubun'],
+          default: 'Mayatàan',
       },
      details: String,
      user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},

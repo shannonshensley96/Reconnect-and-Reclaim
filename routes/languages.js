@@ -8,6 +8,8 @@ router.get('/new', languageCrtl.new);
 router.post('/', languageCrtl.create);
 router.get('/languageIndex', languageCrtl.index);
 router.delete('/:id', languageCrtl.delete);
+router.get('/:id/edit', languageCrtl.edit);
+router.put('/:id', languageCrtl.update);
 router.get('/:id', languageCrtl.show);
 
 

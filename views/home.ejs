@@ -7,31 +7,37 @@
     <link rel="stylesheet" href="stylesheets/style.css"/>
     <title>Reconnect and Reclaim</title>
 </head>
-<body> 
-    <ul class="login">
-        <li>
+<body id = "home"> 
+    <div class="login">
           <% if (user) { %>
             <a href="/logout">Log Out</a>
           <% } else { %>
             <a href="/auth/google"> Login with Google</a>
           <% } %>       
-        </li>
-      </ul>
+      </div>
     <br>
 
-    <section class="add">
+    <section class="add/index">
           <% if (user) { %>
             <a href="/languages/new">Add Language</a>
 
           <% } %>         
-    </section>
 
       <a href="/languages/languageIndex">Languages</a>
-
+    </section>
         
+
+<div class ="startingBlock">
+  <div class= "background">
+    <img src="images/Project2.png" alt="">
+  </div>
+  <div class="text">
     <h1>Reconnect <br> and <br> Reclaim</h1>
 
 
-<p><h3>About Us</h3><br>Reconnecting to your heritage and learning your native language can be difficult since there aren't many resources available. Here you can find an index of useful phrases and sign up to teach or take classes. </p>
+<p><h3>About Us</h3><br>Reconnecting to your heritage and learning your native language can be difficult since there aren't many resources available. Here you can find an index of useful phrases to help you on your journey! - Dios Bo'otik. </p>
+
+  </div>
+</div>
 </body>
 </html>

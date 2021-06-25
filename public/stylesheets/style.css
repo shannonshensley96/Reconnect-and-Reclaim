@@ -1,20 +1,36 @@
-.brand-logo {
-  margin-left: 15px;
-}
-
-.card .card-content .card-title {
-  margin-bottom: 10px;
-}
-
-#search-row form {
-  padding-top: 20px;
-}
-
-.student-name {
+.background{
+  background-color: lightcoral;
+  height: 100%;
+  width: 60%;
   position: relative;
-  top: -5px;
+}
+.login{
+
+ text-align:right;
 }
 
-.collection-item form {
-  margin-top: -5px;
+h1{
+  text-align: center;
+  
+}
+.startingBlock{
+  display: flex;
+  background-color: lawngreen;
+  height: 100vh;
+  width:100vw;
+}
+
+.text{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightseagreen;
+  height:100%;
+  width: 40%;
+}
+img{
+ height: 100%;
+ width: 100%;
+
 }
