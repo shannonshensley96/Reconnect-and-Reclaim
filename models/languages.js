@@ -11,8 +11,8 @@ const languageSchema = new mongoose.Schema({
           type: String,
           enum : ['mayataan','quechua'],
           default: 'mayataan',
-          details: String
       },
+     details: String,
      user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
      phrases: [phrasesSchema]
      // add whatever other attributes you want below that then

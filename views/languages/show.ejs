@@ -8,25 +8,48 @@
 </head>
 <body>
   <section id="show-page">
-    
     <h1><%= languages.language %></h1>
-    <div>Details: </div>
-     <div><%=languages.details%></div>
   </section>
+  <br><br>
+   <section>
+     <h1>Details:</h1>
+    <div><%=languages.details%></div>
+   </section> 
   
-    <br><br>
-    <h2>Add phrase</h2>
-    <form id="newPhrase"  method="POST" action="/languages/<%= languages._id %>/phrase">
-      <label>Language</label>
-  <select name="language">
-      <option value="mayataan">Mayataan</option>
-      <option value="quechua">Quechua</option>     
-  </select>
-      <input name="phrase" type="text" value="phrase">
-      <input name ="translation "type="text" value= "translation">
-      <input type="submit" value="Add Phrase" >
-  </form>
+    <% if (user) { %>
+      <h2>Add phrase</h2>
+      <form id="newPhrase"  method="POST" action="/languages/<%= languages._id %>/phrase">
+        <label>Language</label>
+    <select name="language">
+        <option value="mayataan">Mayataan</option>
+        <option value="quechua">Quechua</option>     
+    </select>
+        <input name="phrase" type="text" value="phrase">
+        <input name ="translation "type="text" value= "translation">
+        <input type="submit" value="Add Phrase" >
+      </form>
+    <% } %>     
+    <% if (languages.phrase) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Phrase</th>
+            <th>Translation</th> 
+          </tr>
+        </thead>
+        <tbody>
+          <% languages.phrase.forEach(function(p) { %>
+            <tr>
+              <td><%= p.phrase %></td>
+              <td><%= r.translation %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <h5>No Phrases Yet</h5>
+    <% } %>
     
-    
+
 </body>
 </html>

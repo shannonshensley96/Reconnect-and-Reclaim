@@ -6,7 +6,13 @@ module.exports = {
 };
 
 
-function create(req, res){
-    console.log(req.body,'<- create phrase')
-   res.send('hitting add phrase')
-}
+function create(req, res) {
+    Language.findById(req.params.id, function(err, language) {
+    language.phrase.push(req.body);
+     language.save(function(err) {
+        res.redirect(`/languages/${language._id}`,{
+            // language: language
+        });
+    });
+    });
+  }

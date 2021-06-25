@@ -7,6 +7,7 @@ module.exports = {
   index,
   new: newLanguage,
   create,
+  delete: deleteLanguage,
   show
 //   delete : deleteLanguage
 
@@ -32,12 +33,19 @@ function create(req, res){
     // console.log(req.params._id,"<- this is the id")
     const language = new Language(req.body);
 
-    language.user= req.user._id
+    language.user = req.user._id 
     language.save(function(err){
         if (err) return res.redirect('/languages/')
-        res.redirect(`/languages/languageIndex`) 
+        res.redirect(`/languages/${language._id}`) 
     })
 
+}
+
+function deleteLanguage(req, res) {
+    console.log(req.params.id, "this is req.params");
+    Language.findByIdAndDelete(req.params.id, function(err) {
+        res.redirect('/languageIndex');
+    });
 }
 
 function show(req,res){
@@ -50,21 +58,4 @@ function show(req,res){
     })
 }
 
-        // function deleteLanguage(req, res) {
-        //     res.send('hitting the delete route')
-        // }
-    // Note the cool "dot" syntax to query on the property of a subdoc
-//     Language.findOne(
-//       {'language._id': req.params.id, 'comments.userId': req.user._id},
-//       function(err, language) {
-//         if (!language || err) return res.redirect(`languages/languageIndex`);
-//         // Remove the subdoc (https://mongoosejs.com/docs/subdocs.html)
-//         language.remove(req.params.id);
-//         // Save the updated book
-//         language.save(function(err) {
-//           // Redirect back to the book's show view
-//           res.redirect(`languages/languageIndex`);
-//         });
-//       }
-//     );
-//   }
+      

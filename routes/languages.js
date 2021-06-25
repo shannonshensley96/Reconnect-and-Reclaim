@@ -7,6 +7,7 @@ const languageCrtl = require('../controllers/language');
 router.get('/new', languageCrtl.new);
 router.post('/', languageCrtl.create);
 router.get('/languageIndex', languageCrtl.index);
+router.delete('/:id', languageCrtl.delete);
 router.get('/:id', languageCrtl.show);
 
 
