@@ -8,28 +8,24 @@
     <title>Reconnect and Reclaim</title>
 </head>
 <body id = "home"> 
-    <div class="login">
+    <div id ="nav" >
           <% if (user) { %>
             <a href="/logout">Log Out</a>
           <% } else { %>
             <a href="/auth/google"> Login with Google</a>
           <% } %>       
-      </div>
-    <br>
-
-    <section class="add/index">
           <% if (user) { %>
             <a href="/languages/new">Add Language</a>
 
           <% } %>         
 
       <a href="/languages/languageIndex">Languages</a>
-    </section>
+  </div>
         
 
 <div class ="startingBlock">
   <div class= "background">
-    <img src="images/Project2.png" alt="">
+    <img src="images/border.png" alt="">
   </div>
   <div class="text">
     <h1>Reconnect <br> and <br> Reclaim</h1>

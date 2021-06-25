@@ -3,8 +3,7 @@ const Language = require('../models/languages');
 
 module.exports = {
  create,
- edit: phraseEdit, 
- update: updatePhrase
+
 };
 
 
@@ -18,10 +17,3 @@ function create(req, res) {
     });
   }
 
-  function phraseEdit(req, res){
-      res.send('hitting edit')
-  }
-
-  function updatePhrase(req, res){
-      res.send('hitting update route')
-  }
