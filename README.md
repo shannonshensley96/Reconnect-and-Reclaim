@@ -2,9 +2,9 @@
 <H1>Reconnect and Reclaim</h1>
 <article>This project was created with reconnecting natives in mind. Often it's hard for us to find resources to help us learn our languages. I wanted there to be a place where we could go to find phrases to make it easier to start speaking our languages<article>
     
-    <img src="images/ERD.png" alt="">
+    <img src="images/ERD.png" width="200px">
 
-    <img src="images/homePage.png" alt="">
+    <img src="images/homePage.png" width="200px">
 
 
 <h3>This app was built using</h3> 
